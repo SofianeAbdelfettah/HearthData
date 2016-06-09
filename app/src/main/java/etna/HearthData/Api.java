@@ -14,6 +14,6 @@ import retrofit.http.Path;
 
 public interface Api {
     @Headers("x-mashape-key : rEGdRfdV70mshZfE7oAisRzgFDkwp1rv2qljsn7DJy9wW4HEVb")
-    @GET("cards/search/{card}")
+    @GET("cards/{card}")
     Call<List<Repo>> getStudentDetails(@Path("card") String card);
 }

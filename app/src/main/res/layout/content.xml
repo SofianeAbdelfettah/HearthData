@@ -13,7 +13,7 @@
 
     <TextView
         android:id="@+id/text_id_2"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="250dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"/>
@@ -55,6 +55,13 @@
         android:layout_height="match_parent"
         android:id="@+id/img_id_1"
         android:layout_below="@+id/text_name_2"
-        android:layout_toEndOf="@+id/RetrofitArray"
         android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/img_id_2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/text_id_1" />
 </RelativeLayout>

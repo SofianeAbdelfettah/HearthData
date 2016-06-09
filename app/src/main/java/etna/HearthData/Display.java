@@ -58,20 +58,22 @@ public class Display extends AppCompatActivity {
                 try {
 
                     List<Repo> StudentData = response.body();
-
+                    if(response.body()!=null){
                     for (int i = 0; i < StudentData.size(); i++) {
                         if (i == 0) {
-                            text_id_1.setText("StudentId  :  " + StudentData.get(i).getCardId());
-                            text_name_1.setText("StudentName  :  " + StudentData.get(i).getName());
-                            text_marks_1.setText("StudentMarks  : " + StudentData.get(i).getCardSet());
-                            Glide.with(getApplicationContext()).load(StudentData.get(i).getImgGold()).asBitmap().into(img_id_1);
-                        } else if (i == 1) {
-                            text_id_2.setText("StudentId  :  " + StudentData.get(i).getCardId());
-                            text_name_2.setText("StudentName  :  " + StudentData.get(i).getName());
-                            text_marks_2.setText("StudentMarks  : " + StudentData.get(i).getCardSet());
+                            text_id_1.setText("Card ID :  " + StudentData.get(i).getCardId());
+                            text_name_1.setText("Name  :  " + StudentData.get(i).getName());
+                            text_marks_1.setText("CardSet  : " + StudentData.get(i).getCardSet());
+                            text_id_2.setText("Locale  : " + StudentData.get(i).getLocale());
+                            text_name_2.setText("type  : " + StudentData.get(i).getType());
+                            text_marks_2.setText("Health  : " + StudentData.get(i).getHealth());
+                            Glide.with(getApplicationContext()).load(StudentData.get(i).getImg()).into(img_id_1);
                         }
                     }
-
+                    }
+                    else{
+                        text_marks_1.setText("aucune carte trouver, veuillez écrire le nom exact svp");
+                    }
 
                 } catch (Exception e) {
                     Log.d("onResponse", "There is an error");
